@@ -4,29 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/00aed31ee4.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/00aed31ee4.js" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="style.css">
-    <title>Form Input Wave</title>
+    <title>Sound Board</title>
 </head>
 <body>
-<div class="container">
-    <h1>Please Login</h1>
-    <form>
-        <div class="form-control">
-            <input type="text" required>
-            <label>Email</label>
-        </div>
+    <audio id="applause" src="sounds/applause.mp3"></audio>
+    <audio id="boo" src="sounds/boo.mp3"></audio>
+    <audio id="gasp" src="sounds/gasp.mp3"></audio>
+    <audio id="tada" src="sounds/dinosaur.mp3"></audio>
+    <audio id="victory" src="sounds/boom.mp3"></audio>
+    <audio id="wrong" src="sounds/fart.mp3"></audio>
 
-        <div class="form-control">
-            <input type="password" required>
-            <label>Password</label>
-        </div>
-
-        <button class="btn">Login</button>
-
-        <p class="text">Don't have an account ?<a href="#">Register</a></p>
-    </form>
-</div>
+    <div id="buttons"></div>
 
     <script src="script.js"></script>
 </body>
