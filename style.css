@@ -6,27 +6,44 @@
 
 
 body{
+    background-color: #efedd6;
     font-family: 'Ubuntu',sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:0;
+    overflow-x: hidden;
+}
+
+h1{
+    margin: 10px;
+}
+
+.box{
+    background-color: steelblue;
+    color:#fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    height:100vh;
-    overflow: hidden;
-    margin:0;
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.3);
+    transform: translateX(400%);
+    transition: transform 0.4s ease;
+
 }
 
-.bg{
-    background:url('https://imgs.search.brave.com/OIMj90CLaTeGQsdTB-T_csio5SZ-7fn_cHmJ4imv3qA/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9jYmV5/b25kYXRhLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8x/MC9pU3RvY2stMTIz/NzU0NjUzMS0xOTIw/eDEyODAuanBn') no-repeat center center/cover;
-    position: absolute;
-    top: -30px;
-    left: -30px;
-    width:calc(100vw + 60px);
-    height: calc(100vh + 60px);
-    z-index:-1;
-    filter:blur(0px);
+.box:nth-of-type(even){
+    transform: translateX(-400%);
 }
 
-.loading-text{
-    font-size: 50px;
-    color:black;
+.box.show{
+    transform: translateX(0);
+}
+
+.box h2{
+    font-size: 45px;
 }
