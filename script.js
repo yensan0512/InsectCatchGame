@@ -1,27 +1,32 @@
-const sounds = ['applause','boo','gasp','tada','victory','wrong']
+const jokEEl = document.getElementById('joke')
+const jokeBtn = document.getElementById('jokeBtn')
 
-sounds.forEach(sound => {
-    const btn = document.createElement('button')
-    btn.classList.add('btn')
+jokeBtn.addEventListener('click',generateJoke)
 
-    btn.innerText = sound
+generateJoke()
 
-    btn.addEventListener('click',() => {
-        stopSongs()
+async function generateJoke(){
+    const config = {headers:{
+        'Accept':'application/json'
+        }
+    }
 
-        document.getElementById(sound).play()
-    })
+    const res = await fetch('https://icanhazdadjoke.com',config)
+        
+    const data = await res.json()
 
-    document.getElementById('buttons').appendChild(btn)
-
-})
-
-function stopSongs(){
-
-    sounds.forEach(sound => {
-        const song = document.getElementById(sound)
-
-        song.pause()
-        song.currentTime = 0;
-    })
+    jokEEl.innerHTML = data.joke
 }
+
+// function generateJoke(){
+//     const config = {headers:{
+//         'Accept':'application/json'
+//         }
+//     }
+
+//     fetch('https://icanhazdadjoke.com',config)
+//         .then(res => res.json())
+//         .then((data) => {
+//             jokEEl.innerHTML = data.joke
+//     })
+// }
